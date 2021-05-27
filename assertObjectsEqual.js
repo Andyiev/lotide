@@ -1,23 +1,25 @@
 const assertObjectsEqual = function(actual, expected) {
-  const inspect = require('util').inspect; // <= add this line
-    // console.log("Assertion Passed: " + [actual] + " === " + [expected]);
-    console.log("✅✅✅ Assertion Passed: " + actual + " === " + expected);
+  if (eqObjects(actual, expected) === true) {
+    // console.log("✅✅✅ Assertion Passed: " + actual + " === " + expected);
+  } else {
+    // console.log("🛑🛑🛑 Assertion Failed: " + actual + " !== " + expected);
+  }
 };
+// console.log("Assertion Passed: " + [actual] + " === " + [expected]);
+   
 const eqObjects = function(object1,object2) {
-  const entries1 = Object.entries(object1);
-  const entries2 = Object.entries(object2);
+  let entries1 = Object.keys(object1);
+  let entries2 = Object.keys(object2);
+  console.log(entries1);
+  console.log(entries2);
   if (entries1.length !== entries2.length) {
+    console.log("lengths are not equal");
     console.log("🛑🛑🛑 Assertion Failed: " + object1 + " !== " + object2);
     return false;
   }
-  for (let i = 0; i < entries1.length; ++i) {
+  for (let element in object1) {
     // Keys
-    if (entries1[i][0] !== entries2[i][0]) {
-      console.log("🛑🛑🛑 Assertion Failed: " + object1 + " !== " + object2);
-      return false;
-    }
-    // Values
-    if (entries1[i][1] !== entries2[i][1]) {
+    if (!object2.hasOwnProperty(element) || object1[element] !== object2[element]) {
       console.log("🛑🛑🛑 Assertion Failed: " + object1 + " !== " + object2);
       return false;
     }
@@ -27,30 +29,6 @@ const eqObjects = function(object1,object2) {
 };
 
 
-// does not work. it returns fault - Assertion Failed: [object Object] !== [object Object]
-// FUNCTION IMPLEMENTATION
-/*
-const assertObjectsEqual = function(actual, expected) {
-  const inspect = require('util').inspect; // <= add this line
-  // ...
-};
-console.log(`Example label: ${inspect(actual)}`);
-
 const ab = { a: "1", b: "2" };
 const ba = { b: "2", a: "1" };
-console.log(eqObjects(ab, ba)); // => true
-
-const abc = { a: "1", b: "2", c: "3" };
-const ab = { a: "1", b: "2" };
-console.log(eqObjects(ab, abc)); // => false
-
-const cd = { c: "1", d: ["2", 3] };
-const dc = { d: ["2", 3], c: "1" };
-console.log(eqObjects(cd, dc)); // => true
-
-const cd2 = { c: "1", d: ["2", 3, 4] };
-const cd = { c: "1", d: ["2", 3] };
-console.log(assertObjectsEqual(cd, cd2)); // => false
-
-//✅✅✅ Assertion Passed: [object Object] === [object Object]
-//🛑🛑🛑 Assertion Failed: [object Object] !== [object Object]
+console.log(assertObjectsEqual(ab, ba)); // => true
