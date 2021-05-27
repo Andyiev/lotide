@@ -48,6 +48,7 @@ const forCheck = {
 };
 console.log(Object.entries(countLetters("lighthouse in the house")));
 console.log(Object.entries(forCheck));
+// to use the assert checking have to convert objects into strings
 part1 = JSON.stringify(countLetters("lighthouse in the house"));
 part2 = JSON.stringify(forCheck);
 assertEqual(part1,part2);
