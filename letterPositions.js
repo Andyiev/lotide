@@ -7,14 +7,21 @@ For each letter, instead of returning just one number to represent its number of
 const letterPositions = function(myString) {
   
   const result = {};
+  let resultArr = [];
   for (let i = 0; i < myString.length; i++) {// for my string
     
     if (myString[i] !== " ") { //if this is not a space
       if (myString[i] in result) { 
         // if I have this element of a string like a key in my result object
-        result[myString[i]] = result[myString[i]] + " " + i; // I see l second time - i add this "i" to the key-value for this key
+        resultArr[i] = result[myString[i]];
+        resultArr[i].push(i);
+        result[myString[i]] = resultArr[i];
+        //result[myString[i]] = result[myString[i]] + " " + i; // I see l second time - i add this "i" to the key-value for this key
       } else {
-        result[myString[i]] = i; //if i see myString[i] first time -  i put a new pair into the result
+        resultArr[i] = [];
+        resultArr[i].push(i);
+        result[myString[i]] = resultArr[i]; 
+        //if i see myString[i] first time -  i put a new pair into the result
       }
     }
   } 
