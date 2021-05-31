@@ -1,32 +1,18 @@
-// this function is to compare two values, not for arrays
-const assertEqual = function(actual, expected) {
-  if (actual === expected) {
-    // console.log("Assertion Passed: " + [actual] + " === " + [expected]);
-    console.log("Assertion passed: " + actual + " === " + expected);
-  } else {
-    console.log("Assertion Failed: " + actual + " !== " + expected);
-  }
-};
+const assertEqual = require("./assertEqual");
 const eqArrays = function(arrOne,arrTwo) {
   if (arrOne.length !== arrTwo.length) {
+    console.log(` Arrays ${arrOne} and ${arrTwo} are not equal`);
     return false;
   } else {
   for (let i = 0; i < arrOne.length; i++) {
     if (arrOne[i] !== arrTwo[i]) {
+      console.log(` Arrays ${arrOne} and ${arrTwo} are not equal`);
       return false;
     }
   }
+  console.log(` Arrays ${arrOne} and ${arrTwo} are equal`);
   return true;
   }
 };
 
 module.exports = eqArrays;
-// assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true); // => should PASS
-
-// assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true); // => true
-
-// assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), false); // checking work
-/*
-eqArrays(["1", "2", "3"], ["1", "2", "3"]) // => true
-eqArrays(["1", "2", "3"], ["1", "2", 3]) // => false
-*/
