@@ -1,8 +1,8 @@
 const assertObjectsEqual = function(actual, expected) {
   if (eqObjects(actual, expected) === true) {
-    // console.log("✅✅✅ Assertion Passed: " + actual + " === " + expected);
+    console.log("✅✅✅ Assertion Passed: " + actual + " === " + expected);
   } else {
-    // console.log("🛑🛑🛑 Assertion Failed: " + actual + " !== " + expected);
+    console.log("🛑🛑🛑 Assertion Failed: " + actual + " !== " + expected);
   }
 };
 // console.log("Assertion Passed: " + [actual] + " === " + [expected]);
@@ -24,7 +24,7 @@ const eqObjects = function(object1,object2) {
       return false;
     }
   }
-  console.log("✅✅✅ Assertion Passed: " + object1 + " === " + object2);
+  //console.log("✅✅✅ Assertion Passed: " + object1 + " === " + object2);
   return true;
 };
 

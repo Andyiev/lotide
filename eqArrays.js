@@ -20,11 +20,12 @@ const eqArrays = function(arrOne,arrTwo) {
   }
 };
 
-assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true); // => should PASS
+module.exports = eqArrays;
+// assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true); // => should PASS
 
-assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true); // => true
+// assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true); // => true
 
-assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), false); // checking work
+// assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), false); // checking work
 /*
 eqArrays(["1", "2", "3"], ["1", "2", "3"]) // => true
 eqArrays(["1", "2", "3"], ["1", "2", 3]) // => false

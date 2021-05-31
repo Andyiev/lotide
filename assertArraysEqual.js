@@ -17,7 +17,6 @@ const assertArraysEqual = function(actual, expected) {
   } else {
     console.log(`Assertion passed ${actual} === ${expected}`);
   }
-  // some "return ..." should be added here to get the result. Maybe...
 };
 
 //assertArraysEqual([1,2,3],[2,3,4]);
@@ -40,4 +39,6 @@ const assertArraysEqual = function(actual, expected) {
 };
 */
 //console.log("[1,2,3] and [1,2,3]. " + eqArrays([1,2,3],[1,2,3]));
-console.log("[1,2,3] and [1,2,3]. " + assertArraysEqual([1,2,3],[1,2,3]));
+//console.log("[1,2,3] and [1,2,3]. " + assertArraysEqual([1,///2,3],[1,2,3]));
+
+module.exports = assertArraysEqual;
