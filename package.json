@@ -1,7 +1,7 @@
 {
   "name": "@andyiev/lotide",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.0.1",
+  "description": "head,tail, middle, assertArraysEqual, assertEqual,eqArrays",
   "main": "assertArraysEqual.js",
   "directories": {
     "test": "test"
@@ -13,7 +13,7 @@
     "type": "git",
     "url": "git+https://github.com/Andyiev/lotide.git"
   },
-  "author": "",
+  "author": "Andrew Ievdokymenko // andyiev",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Andyiev/lotide/issues"
