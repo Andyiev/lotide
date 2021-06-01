@@ -20,8 +20,9 @@ const middle = function(oldArray) {
       return newArray;
     }
   } else {
-    return newArray;
+    newArray = oldArray;
   }
+  return newArray;
 };
 
 module.exports = middle;
